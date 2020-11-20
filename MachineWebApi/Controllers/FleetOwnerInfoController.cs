@@ -16,6 +16,7 @@ namespace MachineWebApi.Controllers
             {
                 entities.FleetOwnerInfoes.Add(fleetOwner);
                 entities.SaveChanges();
+
             }
         }
     }

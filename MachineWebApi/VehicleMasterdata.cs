@@ -60,5 +60,11 @@ namespace MachineWebApi
 
         [StringLength(255)]
         public string ActualMileageDate { get; set; }
+
+        public string PartsChangeNotification { get; set; }
+        public DateTime ServiceAggrementStartDate { get; set; }
+        public DateTime MaintainceDate { get; set; }
+
+        public DateTime ServiceAgreementEndDate { get; set; }
     }
 }

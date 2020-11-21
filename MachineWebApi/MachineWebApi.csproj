@@ -243,6 +243,7 @@
     <Compile Include="Controllers\MachineController.cs" />
     <Compile Include="Controllers\MachineDataController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\VehicleMasterdatasController.cs" />
     <Compile Include="FleetCare.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

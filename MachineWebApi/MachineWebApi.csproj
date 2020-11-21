@@ -302,13 +302,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="MachineModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MachineModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="MachineModel.edmx.diagram">
-      <DependentUpon>MachineModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\employee-and-team-sales.json" />
     <Content Include="Content\employee-average-sales.json" />
     <Content Include="Content\employee-quarter-sales.json" />

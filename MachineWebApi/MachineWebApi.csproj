@@ -314,6 +314,15 @@
     <Content Include="Content\employee-quarter-sales.json" />
     <Content Include="Content\employee-sales.json" />
     <Content Include="Content\employees-list.json" />
+    <Content Include="Content\order-details.json" />
+    <Content Include="Content\order-information.json" />
+    <Content Include="Content\orders.json" />
+    <Content Include="Content\product-details.json" />
+    <Content Include="Content\product-sales.json" />
+    <Content Include="Content\top-selling-products.json" />
+    <Content Include="Content\countries-sales.geo.json" />
+    <Content Include="Content\country-customers.json" />
+    <Content Include="Content\customers.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

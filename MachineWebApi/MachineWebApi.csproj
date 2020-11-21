@@ -243,6 +243,7 @@
     <Compile Include="Controllers\MachineController.cs" />
     <Compile Include="Controllers\MachineDataController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\VehicleMasterdatasController.cs" />
     <Compile Include="FleetCare.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -273,6 +274,7 @@
     <Content Include="DashBoard.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FuelEfficiency.html" />
     <Content Include="Global.asax" />
     <Content Include="Login.html" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
@@ -301,6 +303,20 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\employee-and-team-sales.json" />
+    <Content Include="Content\employee-average-sales.json" />
+    <Content Include="Content\employee-quarter-sales.json" />
+    <Content Include="Content\employee-sales.json" />
+    <Content Include="Content\employees-list.json" />
+    <Content Include="Content\order-details.json" />
+    <Content Include="Content\order-information.json" />
+    <Content Include="Content\orders.json" />
+    <Content Include="Content\product-details.json" />
+    <Content Include="Content\product-sales.json" />
+    <Content Include="Content\top-selling-products.json" />
+    <Content Include="Content\countries-sales.geo.json" />
+    <Content Include="Content\country-customers.json" />
+    <Content Include="Content\customers.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

@@ -129,5 +129,7 @@ namespace MachineWebApi
 
         [StringLength(50)]
         public string TriggerId { get; set; }
+
+
     }
 }

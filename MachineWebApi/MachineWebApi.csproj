@@ -80,6 +80,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.Entity" />
@@ -242,43 +243,23 @@
     <Compile Include="Controllers\MachineController.cs" />
     <Compile Include="Controllers\MachineDataController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="CustomerDetail.cs">
-      <DependentUpon>MachineModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FleetOwnerInfo.cs">
-      <DependentUpon>MachineModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="FleetCare.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="MachineInformation.cs">
-      <DependentUpon>MachineModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MachineModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MachineModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MachineModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MachineModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MachineModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MachineModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Machine_Data.cs">
-      <DependentUpon>MachineModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="PartsAvailibility.cs" />
+    <Compile Include="PartsInventory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="ServiceHistory.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="VehicleMasterdata.cs" />
+    <Compile Include="VehiclePartsData.cs" />
+    <Compile Include="VehicleUpTimeData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -295,16 +276,6 @@
     <Content Include="FuelEfficiency.html" />
     <Content Include="Global.asax" />
     <Content Include="Login.html" />
-    <Content Include="MachineModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MachineModel.edmx</DependentUpon>
-      <LastGenOutput>MachineModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="MachineModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MachineModel.edmx</DependentUpon>
-      <LastGenOutput>MachineModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />

@@ -9,15 +9,15 @@ namespace MachineWebApi.Controllers
 {
     public class FleetOwnerInfoController : ApiController
     {
-        [HttpPost]
-        public void Create([FromBody] FleetOwnerInfo fleetOwner)
-        {
-            using (FleetMachinesEntities1 entities = new FleetMachinesEntities1())
-            {
-                entities.FleetOwnerInfoes.Add(fleetOwner);
-                entities.SaveChanges();
+        //[HttpPost]
+        //public void Create([FromBody] FleetOwnerInfo fleetOwner)
+        //{
+        //    using (FleetMachinesEntities1 entities = new FleetMachinesEntities1())
+        //    {
+        //        entities.FleetOwnerInfoes.Add(fleetOwner);
+        //        entities.SaveChanges();
 
-            }
-        }
+        //    }
+        //}
     }
 }

@@ -9,21 +9,21 @@ namespace MachineWebApi.Controllers
 {
     public class MachineController : ApiController
     {
-        public IEnumerable<Machine_Data> Get()
-        {
-            using (FleetMachinesEntities1 entities = new FleetMachinesEntities1())
-            {
-                return entities.Machine_Data.ToList();
-            }
-        }
+        //public IEnumerable<Machine_Data> Get()
+        //{
+        //    using (FleetMachinesEntities1 entities = new FleetMachinesEntities1())
+        //    {
+        //        return entities.Machine_Data.ToList();
+        //    }
+        //}
 
-        public IEnumerable<Machine_Data> Get(string id)
-        {
-            using (FleetMachinesEntities1 entities = new FleetMachinesEntities1())
-            {
-                return entities.Machine_Data.ToList().Where(e => e.CustomerID == id);
-            }
-        }
+        //public IEnumerable<Machine_Data> Get(string id)
+        //{
+        //    using (FleetMachinesEntities1 entities = new FleetMachinesEntities1())
+        //    {
+        //        return entities.Machine_Data.ToList().Where(e => e.CustomerID == id);
+        //    }
+        //}
 
         
     }

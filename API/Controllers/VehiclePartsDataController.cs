@@ -11,11 +11,11 @@ namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class VehiclePartsDatasController : ControllerBase
+    public class VehiclePartsDataController : ControllerBase
     {
         private readonly CoreDbContext _context;
 
-        public VehiclePartsDatasController(CoreDbContext context)
+        public VehiclePartsDataController(CoreDbContext context)
         {
             _context = context;
         }

@@ -267,6 +267,12 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\Electric_Truck_Volvo.PNG" />
+    <Content Include="Content\Images\Electric_Truck_Volvo_1.PNG" />
+    <Content Include="Content\Images\Electric_Truck_Volvo_2.PNG" />
+    <Content Include="Content\Images\Electric_Truck_Volvo_3.PNG" />
+    <Content Include="Content\Images\Electric_Truck_Volvo_4.PNG" />
+    <Content Include="Content\Images\Electric_Truck_Volvo_5.PNG" />
+    <Content Include="Content\Images\Electric_Truck_Volvo_6.PNG" />
     <Content Include="Content\Images\VCE.jpg" />
     <Content Include="Content\Images\Volvo_logo.png" />
     <Content Include="Content\main.css" />

@@ -317,6 +317,8 @@
     <Content Include="Content\countries-sales.geo.json" />
     <Content Include="Content\country-customers.json" />
     <Content Include="Content\customers.json" />
+    <Content Include="Content\ServiceHistory.json" />
+    <Content Include="Content\vehicle-list.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

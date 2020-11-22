@@ -30,38 +30,37 @@
                         <span class="icon-bar"></span>
                     </button>
                 </div>
-                <h1 id="dash-logo" class="center-block">Northwind&#183;Dash</h1>
+                <h1 id="dash-logo" class="center-block">Fleet Care</h1>
                 <div class="collapse navbar-collapse" id="sidebar-nav" role="navigation">
                     <ul class="nav">
                         <li id="regionalSalesStatus">
-                            <a href="index.html">
-                                <span class="icon icon-chart-column"></span>Regional Sales Status
+                            <a href="DashBoard.html">
+                                <span class="icon icon-chart-column"></span>Overall Fleet Status
                             </a>
                         </li>
-                        <li id="productsAndOrders">
+                        <!--<li id="productsAndOrders">
                             <a href="products-orders.html">
                                 <span class="icon icon-star-empty"></span>Products &amp; Orders
                             </a>
-                        </li>
+                        </li>-->
                         <li id="teamEfficiency">
-                            <a href="team-efficiency.html">
-                                <span class="icon icon-faves"></span>Team Efficiency
+                            <a href="FuelEfficiency.html">
+                                <span class="icon icon-faves"></span>Fuel Efficiency
                             </a>
                         </li>
-                        <li id="about">
+                        <!--<li id="about">
                             <a href="about.html">
                                 <span class="icon icon-info"></span>About
                             </a>
-                        </li>
+                        </li>-->
                     </ul>
-                    <div id="rights">
-                        <p>
-                            Copyright &copy;
-                            <script type="text/javascript">document.write(new Date().getFullYear());</script>, Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.
-                        </p>
-                    </div>
+                    <!--<div id="rights">
+                        <p>Copyright &copy;
+                            <script type="text/javascript">document.write(new Date().getFullYear());</script>, Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
+                    </div>-->
                 </div>
             </div>
+            
             <!--close left column-->
             <div id="main-section" class="col-xs-12 column">
                 <div id="main-section-header" class="row">
@@ -127,7 +126,7 @@
             <div id="employee-average-sales" style="height:30px"></div>
         </div>
     </div>-->
-                                </div>
+                               
                             </div>
                             <div id="employeeStats" class="col-xs-12">
                                 <div id="team-sales" style="height:200px"></div>
@@ -197,12 +196,12 @@
 
             function initWidgets(){
               $("#start-date").kendoDatePicker({
-                  value: new Date(1996, 0, 1),
+                  value: new Date(2018, 0, 1),
                   change: onCriteriaChange
               })
 
               $("#end-date").kendoDatePicker({
-                  value: new Date(1998, 7, 1),
+                  value: new Date(2019, 12, 0),
                   change: onCriteriaChange
               })
 
@@ -545,7 +544,7 @@
         <div class="col-xs-12 col-sm-4">
             <h3 style="font-weight: bold;">Details</h3>           
             <dl class="employee-bio-details">
-                <dt class="name">Registration No: #:registrationNo# </dt>
+                <dt class="name">REGN NO: #:registrationNo# </dt>
                 <dd class="name">#:model# #:modelYear#  </dd>
                 <dd class="name">#:make# #:categoryChassisType# </dd>
                 <dd class="title">VIN : #:vinno#</dd>

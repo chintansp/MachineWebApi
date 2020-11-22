@@ -66,5 +66,9 @@ namespace MachineWebApi
         public DateTime MaintainceDate { get; set; }
 
         public DateTime ServiceAgreementEndDate { get; set; }
+
+        public bool IsOnline { get; set; }
+        public int Last30DayTruckMileage { get; set; }
+        public int Last30DayFuelConsumtion { get; set; }
     }
 }

@@ -109,6 +109,23 @@
                                     </div>
                                 </div>
                             </div>
+                            <div id="employee-about" class="col-xs-12 placeholder">
+                                <div class="row">
+                                    <div id="employeeBio" class="col-xs-12 col-sm-4">
+                                    </div>
+                                    <div class="col-xs-12 col-sm-4">
+                                        <h3>Service History</h3>
+                                        <span id="vehicle-service-history"></span>                                        
+                                    </div>
+                                    <!--<div class="col-xs-12 col-sm-4">
+                                        <h3>Monthly Average Sales</h3>
+                                        <span id="employee-average-sales-label"></span>
+                                        <div class="sparkline-container">
+                                            <div id="employee-average-sales" style="height:30px"></div>
+                                        </div>
+                                    </div>-->
+                                </div>
+                            </div>
                             <div id="employeeStats" class="col-xs-12">
                                 <div id="team-sales" style="height:200px"></div>
                             </div>
@@ -132,7 +149,16 @@
             var employeeAndTeamSales = [];
             var employeeAverageSales = [];
             var employeeQuarterSales = [];
+            var VehicleServiceHistory = [];
 
+            //$.when($.ajax({
+            //    url: "./Content/ServiceHistory.json",
+            //    dataType: "json",
+            //    type: "GET",
+            //    success: function (data) {
+            //        VehicleServiceHistory = data;
+            //    }
+            //}),
             $.when($.ajax({
                 url: "./Content/employee-and-team-sales.json",
                 dataType: "json",
@@ -297,7 +323,7 @@
               $("#team-sales").kendoChart({
                   theme: "metro",
                   title: {
-                      text: "REPRESENTATIVE SALES VS. TOTAL SALES",
+                      text: "FUEL & TRIP DATA",
                       align: "left",
                       font: "11px sans-serif",
                       color: "#35373d"
@@ -320,12 +346,12 @@
                       position: "bottom"
                   },
                   series: [{
-                      field: "EmployeeSales",
+                      field: "Fuel",
                       categoryField: "Date",
                       name: "Employee Sales",
                       aggregate: "sum"
                   },{
-                      field: "TotalSales",
+                          field: "Trip",
                       categoryField: "Date",
                       name: "Team Sales",
                       aggregate: "sum"
@@ -342,7 +368,7 @@
                           format: "{0:c2}",
                           visible: false
                       },
-                      majorUnit: 25000,
+                      majorUnit: 250,
                       line: {
                           visible: false
                       },
@@ -351,8 +377,8 @@
                       }
                   },
                   tooltip: {
-                      visible: true,
-                      format: "{0:c2}"
+                      visible: true
+                      
                   }
               })
 
@@ -487,6 +513,7 @@
             var data = this.dataSource.aggregates()
             if (data.EmployeeSales) {
                 $("#employee-average-sales-label").text(kendo.toString(data.EmployeeSales.average, "c2"));
+                $("#vehicle-service-history").text(kendo.toString(this.dataSource._pristineData[0].ServiceHistory));
             } else {
                 $("#employee-average-sales-label").text(kendo.toString(0, "c2"));
             }

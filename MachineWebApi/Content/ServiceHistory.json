@@ -1,0 +1,42 @@
+[
+  {
+    "VehicleID": 1,
+    "ServiceDate": "2017 01 01"
+  },
+  {
+    "VehicleID": 2,
+    "ServiceDate": "2018 02 22"
+  },
+  {
+    "VehicleID": 3,
+    "ServiceDate": "2019 03 26"
+  },
+  {
+    "VehicleID": 4,
+    "ServiceDate": "2020 04 30"
+  },
+  {
+    "VehicleID": 5,
+    "ServiceDate": "2017 04 01"
+  },
+  {
+    "VehicleID": 6,
+    "ServiceDate": "2018 06 22"
+  },
+  {
+    "VehicleID": 7,
+    "ServiceDate": "2019 07 26"
+  },
+  {
+    "VehicleID": 8,
+    "ServiceDate": "2020 06 30"
+  },
+  {
+    "VehicleID": 9,
+    "ServiceDate": "2020 06 01"
+  },
+  {
+    "VehicleID": 10,
+    "ServiceDate": "2020 07 01"
+  }
+]

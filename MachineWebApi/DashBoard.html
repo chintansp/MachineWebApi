@@ -442,7 +442,7 @@
 
                 $("#customers").kendoSparkline({
                     theme: "metro",
-                    type: "column",
+                    type: "line",
                     autoBind: false,
                     dataSource: {
                         transport: {
@@ -724,7 +724,7 @@
                     }
                 }
 
-                $("#customers-label").text(kendo.toString(0.93,"p0"));
+                $("#customers-label").text(kendo.toString(0.60, "p0"));
                 $("#customers-no-data").toggle(total === 0);
             }
 

@@ -84,7 +84,7 @@
                 <div class="main-section-content row" style="">
 
                     <div id="employee-list" class="col col-xs-2">
-                        <h3>TEAM MEMBERS</h3>
+                        <h3>VEHICLES</h3>
                         <div id="employees-list"></div>
                     </div>
                     <div id="employee-details-wrapper" class="col col-xs-10">
@@ -208,7 +208,7 @@
                   dataSource: {
                       transport: {
                           read: {
-                              url: './Content/employees-list.json',
+                              url: './Content/vehicle-list.json',
                           }
                       },
                       pageSize: 9
@@ -485,7 +485,7 @@
                 startDate = $("#start-date").data("kendoDatePicker"),
                 endDate = $("#end-date").data("kendoDatePicker"),
                 filter = {
-                    EmployeeID: employee.EmployeeID,
+                    EmployeeID: employee.id,
                     startDate: kendo.format("{0:MM/dd/yyyy hh:mm:ss}", startDate.value()),
                     endDate: kendo.format("{0:MM/dd/yyyy hh:mm:ss}", endDate.value())
                 },
@@ -494,9 +494,9 @@
             $("#employeeBio").html(template(employee));
 
             employeeSales.dataSource.filter({
-                field: "EmployeeID",
+                field: "id",
                 operator: "eq",
-                value: employee.EmployeeID
+                value: employee.id
             });
 
             teamSales.dataSource.read(filter);
@@ -523,23 +523,25 @@
     <script type="text/x-kendo-tmpl" id="employeeItemTemplate">
         <div class="employee">
             <div class="employee-wrapper">
-                <img src="./Content/Employees/#:EmployeeID#-t.png" class="img-responsive employee-list-image" />
+                <img src="./Content/Employees/#:id#-t.png" class="img-responsive employee-list-image" />
                 <dl class="employee-list-details">
-                    <dt class="name">#:FirstName# #:LastName# </dt>
-                    <dd class="title">#:Title# </dd>
+                    <dt class="name"> #:registrationNo# </dt>
+                    <dd class="name">#:model# </dd>
+                    <dd class="title">#:make# #:categoryChassisType# </dd>
                 </dl>
             </div>
         </div>
     </script>
     <script type="text/x-kendo-tmpl" id="employeeBioTemplate">
         <div>
-            <h3>ABOUT</h3>
-            <img src="./Content/Employees/#:EmployeeID#.png" class="img-responsive employee-details-image" />
+            <h3>Details</h3>
+            <!--<img src="./Content/Employees/#:id#.png" class="img-responsive employee-details-image" />-->
             <dl class="employee-bio-details">
-                <dt class="name">#:FirstName# #:LastName#</dt>
-                <dd class="title">#:Title#</dd>
-                <dd class="phone"><span class="icon icon-mobile"></span>#:HomePhone#</dd>
-                <dd><a href='\\#' class='bioTooltip'> >>FULL BIO <span style='display:none;'>#:Notes#</span></a></dd>
+                <dt class="name">Registration No: #:registrationNo# </dt>
+                <dd class="name">#:model# #:modelYear#  </dd>
+                <dd class="name">#:make# #:categoryChassisType# </dd>
+                <dd class="title">VIN : #:vinno#</dd>
+                <dd></dd>
             </dl>
         </div>
     </script>

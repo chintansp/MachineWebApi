@@ -30,7 +30,7 @@
                         <span class="icon-bar"></span>
                     </button>
                 </div>
-                <h1 id="dash-logo" class="center-block">Northwind&#183;Dash</h1>
+                <h1 id="dash-logo" class="center-block">Fleet Care</h1>
                 <div class="collapse navbar-collapse" id="sidebar-nav" role="navigation">
                     <ul class="nav">
                         <li id="regional-sales-status">
@@ -38,33 +38,34 @@
                                 <span class="icon icon-chart-column"></span>Regional Sales Status
                             </a>
                         </li>
-                        <li id="products-and-orders">
+                        <
+                        <!--li id="products-and-orders">
                             <a href="products-orders.html">
                                 <span class="icon icon-star-empty"></span>Products &amp; Orders
                             </a>
-                        </li>
+                        </li>-->
                         <li id="team-efficiency">
                             <a href="team-efficiency.html">
-                                <span class="icon icon-faves"></span>Team Efficiency
+                                <span class="icon icon-faves"></span>Truck Efficiency
                             </a>
                         </li>
-                        <li id="about">
+                        <!--<li id="about">
                             <a href="about.html">
                                 <span class="icon icon-info"></span>About
                             </a>
-                        </li>
+                        </li>-->
                     </ul>
-                    <div id="rights">
+                    <!--<div id="rights">
                         <p>Copyright &copy;
                         <script type="text/javascript">document.write(new Date().getFullYear());</script>, Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.</p>
-                    </div>
+                    </div>-->
                 </div>
             </div>
             <!--close left column-->
             <div id="main-section" class="col-xs-12 column">
                 <!--open main column-->
                 <div id="main-section-header" class="row">
-                    <h2 id="team-efficiency" class="col-xs-3">Regional sales status</h2>
+                    <h2 id="team-efficiency" class="col-xs-3">Overall fleet status</h2>
                     <div id="dateFilter" class="col-xs-9">
                         <div class="period-wrapper">
                             <label for="start-date" class="select-period">Stats from</label>
@@ -82,23 +83,23 @@
 
                 <div id="regional-sales" class="main-section-content row">
                     <div id="map-wrapper" class="row">
-                        <div id="map-details" class="col-xs-2">
-                            <h3 class="section-header">Pick a Country to view stats</h3>
-                            <h3 class="section-header">COUNTRY</h3>
+                        <div id="map-details" class="col-xs-4">
+                            <h3 class="section-header" style="color: red;font-weight: bold">Vehicle Notifications</h3>
+                            <!--<h3 class="section-header">COUNTRY</h3>
                             <h2 id="countryName"></h2>
-                            <h3 class="section-header">CUSTOMERS</h3>
+                            <h3 class="section-header">CUSTOMERS</h3>-->
                             <div id="countryCustomers">
                                 <span></span>
                             </div>
                         </div>
-                        <div id="map-container" class="col-xs-10">
+                        <!--<div id="map-container" class="col-xs-10">
                             <div id="map"></div>
-                        </div>
+                        </div>-->
                     </div>
 
                     <div id="statsContainer" class="row">
                         <div id="marketShareContainer" class="col-xs-3 stats-graph">
-                            <h3 class="section-header">Market share</h3>
+                            <h3 class="section-header">Active vehicle:</h3>
                             <span id="market-share-label"></span>
                             <div class="sparkline-container">
                                 <div id="market-share" style="height:100px"></div>
@@ -108,7 +109,7 @@
                             </div>
                         </div>
                         <div id="revenueContainer" class="col-xs-3 stats-graph">
-                            <h3 class="section-header">Revenue</h3>
+                            <h3 class="section-header">Last 30 days Truck Mileage</h3>
                             <span id="revenue-label"></span>
                             <div class="sparkline-container">
                                 <div id="revenue" style="height:100px"></div>
@@ -118,7 +119,7 @@
                             </div>
                         </div>
                         <div id="ordersContainer" class="col-xs-3 stats-graph">
-                            <h3 class="section-header">Orders</h3>
+                            <h3 class="section-header">Fuel Consumption</h3>
                             <span id="orders-label"></span>
                             <div class="sparkline-container">
                                 <div id="orders" style="height:100px"></div>
@@ -128,7 +129,7 @@
                             </div>
                         </div>
                         <div id="customersContainer" class="col-xs-3 stats-graph">
-                            <h3 class="section-header">Customers</h3>
+                            <h3 class="section-header">Uptime</h3>
                             <span id="customers-label"></span>
                             <div class="sparkline-container">
                                 <div id="customers" style="height:100px;"></div>
@@ -140,7 +141,7 @@
                     </div>
 
                     <div id="topProductsContainer">
-                        <h3 class="section-header">Top selling products</h3>
+                        <h3 class="section-header">Top 5 Vehicle mileage</h3>
                         <div id="top-selling-products" style="height:260px"></div>
                         <div id="products-no-data" class="overlay">
                             <div>No data available</div>
@@ -159,23 +160,39 @@
             var scale = chroma.scale(["#ade1fb", "#097dc6"]).domain([1, 100]),
                 selectedShape = null,
                 selectedCountry = "USA";
-
+            var vehicleData = [];
+            var vehicleDataUrl = "http://localhost:62094/api/VehicleMasterdatas/";
             function resizeMap() {
                 var map = $("#map").data("kendoMap");
                 map.resize();
                 map.center([50.000, 0]);
             }
 
+
+            function getNotification() {
+
+
+            }
+            getNotification();
             function onMarketShareDataBound(e) {
                 var percentage = 0,
                     revenue = 0;
+                var totalVehicle = vehicleData.length;
+
+                var activeVehicle = 0;
+                for (var i = 0; i < totalVehicle; i++) {
+                    if (vehicleData[i].IsOnline === true) {
+                        activeVehicle += 1;
+                    }
+                }
+                percentage = (activeVehicle / totalVehicle);
                 if (this.dataSource.data().length == 2) {
-                    percentage = (this.dataSource.at(1).sales / this.dataSource.at(0).sales);
+
                     revenue = this.dataSource.at(1).sales;
                 }
 
-                $("#market-share-label").text(kendo.toString(percentage, "p2"));
-                $("#revenue-label").text(kendo.toString(revenue, "c2"));
+                $("#market-share-label").text(kendo.toString(percentage, "p0"));
+                $("#revenue-label").text(150000);
 
                 $("#revenue-no-data").toggle(revenue === 0);
                 $("#market-share-no-data").toggle(percentage === 0);
@@ -204,35 +221,35 @@
                 change: onCriteriaChange
             })
 
-            $("#map").kendoMap({
-                center: [50.000, 0],
-                zoom: 2,
-                layers: [{
-                    style: {
-                        fill: {
-                            color: "#1996E4"
-                        },
-                        stroke: {
-                            color: "#FFFFFF"
-                        }
-                    },
-                    type: "shape",
-                    dataSource: {
-                        type: "geojson",
-                        transport: {
-                            read: {
-                                dataType: "json",
-                                url: "./Content/countries-sales.geo.json"
-                            }
-                        }
-                    }
-                }],
-                shapeCreated: onShapeCreated,
-                shapeMouseEnter: onShapeMouseEnter,
-                shapeMouseLeave: onShapeMouseLeave,
-                shapeClick: onShapeClick,
-                zoomable: false
-            });
+            //$("#map").kendoMap({
+            //    center: [50.000, 0],
+            //    zoom: 2,
+            //    layers: [{
+            //        style: {
+            //            fill: {
+            //                color: "#1996E4"
+            //            },
+            //            stroke: {
+            //                color: "#FFFFFF"
+            //            }
+            //        },
+            //        type: "shape",
+            //        dataSource: {
+            //            type: "geojson",
+            //            transport: {
+            //                read: {
+            //                    dataType: "json",
+            //                    url: "./Content/countries-sales.geo.json"
+            //                }
+            //            }
+            //        }
+            //    }],
+            //    shapeCreated: onShapeCreated,
+            //    shapeMouseEnter: onShapeMouseEnter,
+            //    shapeMouseLeave: onShapeMouseLeave,
+            //    shapeClick: onShapeClick,
+            //    zoomable: false
+            //});
 
             var orderDetailsData = [];
             var customers = [];
@@ -264,6 +281,14 @@
                     }
                 }),
                 $.ajax({
+                    url: vehicleDataUrl,
+                    dataType: "json",
+                    type: "GET",
+                    success: function (data) {
+                        vehicleData = data;
+                    }
+                }),
+                $.ajax({
                     url: "./Content/top-selling-products.json",
                     dataType: "json",
                     type: "GET",
@@ -286,26 +311,34 @@
                     dataSource: {
                         transport: {
                             read: function (options) {
-                                var from = new Date(options.data.fromDate);
-                                var to = new Date(options.data.toDate);
-                                var total = 0;
+                                //var from = new Date(options.data.fromDate);
+                                //var to = new Date(options.data.toDate);
+                                //var total = 0;
                                 var result = [];
 
-                                for (var i = 0; i < orderDetailsData.length; i++) {
-                                    var order = orderDetailsData[i];
-                                    if (order.country == options.data.country) {
-                                        var orderDate = kendo.parseDate(order.orderDate)
-                                        if (orderDate > from && orderDate < to) {
-                                            total += order.price;
-                                        }
+                                //for (var i = 0; i < orderDetailsData.length; i++) {
+                                //    var order = orderDetailsData[i];
+                                //    if (order.country == options.data.country) {
+                                //        var orderDate = kendo.parseDate(order.orderDate)
+                                //        if (orderDate > from && orderDate < to) {
+                                //            total += order.price;
+                                //        }
+                                //    }
+                                //}
+                                var totalVehicle = vehicleData.length;
+                                var activeVehicle = 0;
+                                for (var i = 0; i < totalVehicle; i++) {
+                                    if (vehicleData[i].IsOnline === true) {
+                                        activeVehicle += 1;
                                     }
                                 }
+                                var offlineVehicle = totalVehicle - activeVehicle;
                                 result = [{
-                                    "country": "All",
-                                    "sales": 854648.019191742
+                                    "country": "Online Vehicle",
+                                    "sales": activeVehicle
                                 }, {
-                                    "country": options.data.country,
-                                    "sales": total
+                                    "country": "Offline Vehicle",
+                                    "sales": offlineVehicle
                                 }]
                                 options.success(result);
                             }
@@ -320,7 +353,7 @@
                     }],
                     tooltip: {
                         visible: true,
-                        template: "#= dataItem.country #: #= kendo.toString(dataItem.sales, 'c2') #"
+                        template: "#= dataItem.country #: #= kendo.toString(dataItem.sales) #"
                     }
                 })
 
@@ -580,8 +613,13 @@
                         companyNames += customer.CompanyName + ", ";
                     }
                 }
+                var test = "";
 
-                $("#countryCustomers span").text(companyNames);
+                test = "<li>Vehicle PK51DNO is due for service in next 1 month</li>";
+                test += "<li>Vehicle YN18JNL is due for service in next 15 days</li>";
+                test += "<li>Vehicle FH67HUD, Battery(1E665) wattage is low please replace</li>";
+
+                $("#countryCustomers span")[0].innerHTML = test;
 
                 var containerWidth = $(".sparkline-container").parent().width(),
                     getSparkLines = $(".k-sparkline"),
@@ -672,7 +710,7 @@
                     }
                 }
 
-                $("#orders-label").text(total);
+                $("#orders-label").text(7800);
                 $("#orders-no-data").toggle(total === 0);
             }
 
@@ -686,7 +724,7 @@
                     }
                 }
 
-                $("#customers-label").text(total);
+                $("#customers-label").text(kendo.toString(0.93,"p0"));
                 $("#customers-no-data").toggle(total === 0);
             }
 

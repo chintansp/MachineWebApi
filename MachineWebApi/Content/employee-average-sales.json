@@ -3,7 +3,8 @@
     "EmployeeID": 1,
     "EmployeeSales": 1614.8800048828125,
     "Date": "1996-07-01T00:00:00",
-    "ServiceHistory": "2021-08-01T00:00:00"
+    "ServiceHistory": "2021-08-01T00:00:00",
+    "ServiceAgreement": "The service expires on 2021-08-01"
   },
   {
     "EmployeeID": 1,
@@ -119,7 +120,8 @@
     "EmployeeID": 2,
     "EmployeeSales": 1176,
     "Date": "1996-07-01T00:00:00",
-    "ServiceHistory": "2021-05-01T00:00:00"
+    "ServiceHistory": "2021-05-01T00:00:00",
+    "ServiceAgreement": "The service expires on 2021-08-01"
   },
   {
     "EmployeeID": 2,
@@ -235,7 +237,8 @@
     "EmployeeID": 3,
     "EmployeeSales": 2963.2199935913086,
     "Date": "1996-07-01T00:00:00",
-    "ServiceHistory": "2020-10-01T00:00:00"
+    "ServiceHistory": "2020-10-01T00:00:00",
+    "ServiceAgreement": "The service expires on 2021-08-01"
   },
   {
     "EmployeeID": 3,
@@ -346,7 +349,8 @@
     "EmployeeID": 4,
     "EmployeeSales": 11860.449924468994,
     "Date": "1996-07-01T00:00:00",
-    "ServiceHistory": "2020-05-01T00:00:00"
+    "ServiceHistory": "2020-05-01T00:00:00",
+    "ServiceAgreement": "The service expires on 2021-08-01"
   },
   {
     "EmployeeID": 4,
@@ -461,7 +465,8 @@
   {
     "EmployeeID": 5,
     "EmployeeSales": 1638.8200149536133,
-    "Date": "1996-07-01T00:00:00"
+    "Date": "1996-07-01T00:00:00",
+    "ServiceAgreement": "The service expires on 2021-08-01"
   },
   {
     "EmployeeID": 5,
@@ -477,7 +482,8 @@
     "EmployeeID": 5,
     "EmployeeSales": 3901.0799827575684,
     "Date": "1996-11-01T00:00:00",
-    "ServiceHistory": "2020-03-01T00:00:00"
+    "ServiceHistory": "2020-05-01T00:00:00",
+    "ServiceAgreement": "\"The service expires on 2021-08-01"
   },
   {
     "EmployeeID": 5,
@@ -552,7 +558,9 @@
   {
     "EmployeeID": 6,
     "EmployeeSales": 2559.0249938964844,
-    "Date": "1996-07-01T00:00:00"
+    "Date": "1996-07-01T00:00:00",
+    "ServiceHistory": "2020-05-01T00:00:00",
+    "ServiceAgreement": "\"The service expires on 2021-08-0"
   },
   {
     "EmployeeID": 6,
@@ -657,7 +665,9 @@
   {
     "EmployeeID": 7,
     "EmployeeSales": 479.3999938964844,
-    "Date": "1996-08-01T00:00:00"
+    "Date": "1996-08-01T00:00:00",
+    "ServiceHistory": "2020-05-01T00:00:00",
+    "ServiceAgreement": "\"The service expires on 2021-08-0"
   },
   {
     "EmployeeID": 7,
@@ -767,7 +777,9 @@
   {
     "EmployeeID": 8,
     "EmployeeSales": 8263.799995422363,
-    "Date": "1996-08-01T00:00:00"
+    "Date": "1996-08-01T00:00:00",
+    "ServiceHistory": "2020-05-01T00:00:00",
+    "ServiceAgreement": "\"The service expires on 2021-08-0"
   },
   {
     "EmployeeID": 8,
@@ -877,7 +889,9 @@
   {
     "EmployeeID": 9,
     "EmployeeSales": 4364.300003051758,
-    "Date": "1996-07-01T00:00:00"
+    "Date": "1996-07-01T00:00:00",
+    "ServiceHistory": "2020-05-01T00:00:00",
+    "ServiceAgreement": "\"The service expires on 2021-08-0"
   },
   {
     "EmployeeID": 9,

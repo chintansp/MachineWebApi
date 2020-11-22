@@ -84,7 +84,7 @@
                 <div class="main-section-content row" style="">
 
                     <div id="employee-list" class="col col-xs-2">
-                        <h3>VEHICLES</h3>
+                        <h3 style="font-weight: bold;">VEHICLES</h3>
                         <div id="employees-list"></div>
                     </div>
                     <div id="employee-details-wrapper" class="col col-xs-10">
@@ -94,14 +94,14 @@
                                     <div id="employeeBio" class="col-xs-12 col-sm-4">
                                     </div>
                                     <div class="col-xs-12 col-sm-4">
-                                        <h3>Quarter to date sales</h3>
+                                        <h3 style="font-weight: bold;">Idle Time</h3>
                                         <span id="employee-quarter-sales-label"></span>
                                         <div class="sparkline-container">
                                             <div id="employee-quarter-sales" style="height:30px"></div>
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-4">
-                                        <h3>Monthly Average Sales</h3>
+                                        <h3 style="font-weight: bold;">Up Time</h3>
                                         <span id="employee-average-sales-label"></span>
                                         <div class="sparkline-container">
                                             <div id="employee-average-sales" style="height:30px"></div>
@@ -111,28 +111,31 @@
                             </div>
                             <div id="employee-about" class="col-xs-12 placeholder">
                                 <div class="row">
-                                    <div id="employeeBio" class="col-xs-12 col-sm-4">
+                                    
+                                    <div class="col-xs-12 col-sm-4">
+                                        <h3 style="font-weight: bold;">Service History</h3>
+                                        <span id="vehicle-service-history"></span>
                                     </div>
                                     <div class="col-xs-12 col-sm-4">
-                                        <h3>Service History</h3>
-                                        <span id="vehicle-service-history"></span>                                        
+                                        <h3 style="font-weight: bold;">Service Agreement</h3>
+                                        <span id="vehicle-service-agreement"></span>
                                     </div>
                                     <!--<div class="col-xs-12 col-sm-4">
-                                        <h3>Monthly Average Sales</h3>
-                                        <span id="employee-average-sales-label"></span>
-                                        <div class="sparkline-container">
-                                            <div id="employee-average-sales" style="height:30px"></div>
-                                        </div>
-                                    </div>-->
+        <h3>Monthly Average Sales</h3>
+        <span id="employee-average-sales-label"></span>
+        <div class="sparkline-container">
+            <div id="employee-average-sales" style="height:30px"></div>
+        </div>
+    </div>-->
                                 </div>
                             </div>
                             <div id="employeeStats" class="col-xs-12">
                                 <div id="team-sales" style="height:200px"></div>
                             </div>
-                            <div id="employeeSchedule" class="col-xs-12">
+                            <!--<div id="employeeSchedule" class="col-xs-12">
                                 <h3>Representative orders - schedule</h3>
                                 <div id="employee-sales"></div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -325,7 +328,7 @@
                   title: {
                       text: "FUEL & TRIP DATA",
                       align: "left",
-                      font: "11px sans-serif",
+                      font: "11px sans-serif bold",
                       color: "#35373d"
                   },
                   autoBind: false,
@@ -348,12 +351,12 @@
                   series: [{
                       field: "Fuel",
                       categoryField: "Date",
-                      name: "Employee Sales",
+                      name: "FUEL",
                       aggregate: "sum"
                   },{
                           field: "Trip",
                       categoryField: "Date",
-                      name: "Team Sales",
+                      name: "TRIP",
                       aggregate: "sum"
                   }],
                   categoryAxis: {
@@ -481,7 +484,7 @@
                 employeeQuarterSales = $("#employee-quarter-sales").data("kendoChart"),
                 employeeAverageSales = $("#employee-average-sales").data("kendoChart"),
                 teamSales = $("#team-sales").data("kendoChart"),
-                employeeSales = $("#employee-sales").data("kendoScheduler"),
+                //employeeSales = $("#employee-sales").data("kendoScheduler"),
                 startDate = $("#start-date").data("kendoDatePicker"),
                 endDate = $("#end-date").data("kendoDatePicker"),
                 filter = {
@@ -493,11 +496,11 @@
 
             $("#employeeBio").html(template(employee));
 
-            employeeSales.dataSource.filter({
-                field: "id",
-                operator: "eq",
-                value: employee.id
-            });
+            //employeeSales.dataSource.filter({
+            //    field: "id",
+            //    operator: "eq",
+            //    value: employee.id
+            //});
 
             teamSales.dataSource.read(filter);
             employeeQuarterSales.dataSource.read(filter);
@@ -506,14 +509,15 @@
 
         function onQuarterSalesDataBound(e) {
             var data = this.dataSource.at(0);
-            $("#employee-quarter-sales-label").text(kendo.toString(data.Current, "c2"));
+            $("#employee-quarter-sales-label").text(kendo.toString(data.Current/10000, "p2"));
         }
 
         function onAverageSalesDataBound(e) {
             var data = this.dataSource.aggregates()
             if (data.EmployeeSales) {
-                $("#employee-average-sales-label").text(kendo.toString(data.EmployeeSales.average, "c2"));
+                $("#employee-average-sales-label").text(kendo.toString(data.EmployeeSales.average/10000, "p2"));
                 $("#vehicle-service-history").text(kendo.toString(this.dataSource._pristineData[0].ServiceHistory));
+                $("#vehicle-service-agreement").text(kendo.toString(this.dataSource._pristineData[0].ServiceAgreement));
             } else {
                 $("#employee-average-sales-label").text(kendo.toString(0, "c2"));
             }
@@ -534,7 +538,7 @@
     </script>
     <script type="text/x-kendo-tmpl" id="employeeBioTemplate">
         <div>
-            <h3>Details</h3>
+            <h3 style="font-weight: bold;">Details</h3>
             <!--<img src="./Content/Employees/#:id#.png" class="img-responsive employee-details-image" />-->
             <dl class="employee-bio-details">
                 <dt class="name">Registration No: #:registrationNo# </dt>

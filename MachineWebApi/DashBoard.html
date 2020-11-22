@@ -66,7 +66,7 @@
                 <!--open main column-->
                 <div id="main-section-header" class="row">
                     <h2 id="team-efficiency" class="col-xs-3">Overall fleet status</h2>
-                    <div id="dateFilter" class="col-xs-9" style="display: none">
+                    <div id="dateFilter" class="col-xs-9" style="display: none" >
                         <div class="period-wrapper">
                             <label for="start-date" class="select-period">Stats from</label>
                             <input id="start-date" />
@@ -210,16 +210,24 @@
             $('[data-toggle=offcanvas]').click(function () {
                 $('.row-offcanvas').toggleClass('active');
             });
-
             $('#end-date').kendoDatePicker({
-                value: new Date(2019, 12, 0),
+                value: new Date(1998, 7, 1),
                 change: onCriteriaChange
             })
 
             $('#start-date').kendoDatePicker({
-                value: new Date(2018, 0, 1),
+                value: new Date(1996, 0, 1),
                 change: onCriteriaChange
             })
+            //$('#end-date').kendoDatePicker({
+            //    value: new Date(2019, 12, 0),
+            //    change: onCriteriaChange
+            //})
+
+            //$('#start-date').kendoDatePicker({
+            //    value: new Date(2018, 0, 1),
+            //    change: onCriteriaChange
+            //})
 
             //$("#map").kendoMap({
             //    center: [50.000, 0],

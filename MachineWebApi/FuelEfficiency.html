@@ -33,20 +33,19 @@
                 <h1 id="dash-logo" class="center-block">Fleet Care</h1>
                 <div class="collapse navbar-collapse" id="sidebar-nav" role="navigation">
                     <ul class="nav">
-                        <li id="regional-sales-status">
+                        <li id="regionalSalesStatus">
                             <a href="DashBoard.html">
-                                <span class="icon icon-chart-column"></span>Dashboard
+                                <span class="icon icon-chart-column"></span>Overall Fleet Status
                             </a>
                         </li>
-                        <
-                        <!--li id="products-and-orders">
-                        <a href="products-orders.html">
-                            <span class="icon icon-star-empty"></span>Products &amp; Orders
-                        </a>
+                        <!--<li id="productsAndOrders">
+                            <a href="products-orders.html">
+                                <span class="icon icon-star-empty"></span>Products &amp; Orders
+                            </a>
                         </li>-->
-                        <li id="team-efficiency">
+                        <li id="teamEfficiency">
                             <a href="FuelEfficiency.html">
-                                <span class="icon icon-faves"></span>Truck Efficiency
+                                <span class="icon icon-faves"></span>Fuel Efficiency
                             </a>
                         </li>
                         <!--<li id="about">
@@ -61,7 +60,7 @@
                     </div>-->
                 </div>
             </div>
-            </div>
+            
             <!--close left column-->
             <div id="main-section" class="col-xs-12 column">
                 <div id="main-section-header" class="row">
@@ -91,7 +90,7 @@
                         <div id="employee-details" class="row">
                             <div id="employee-about" class="col-xs-12 placeholder">
                                 <div class="row">
-                                    <div id="employeeBio" class="col-xs-12 col-sm-4">
+                                    <div id="employeeBio" class="col-xs-12 col-sm-8">
                                     </div>
                                     <div class="col-xs-12 col-sm-4">
                                         <h3 style="font-weight: bold;">Idle Time</h3>
@@ -110,7 +109,7 @@
                                 </div>
                             </div>
                             <div id="employee-about" class="col-xs-12 placeholder">
-                                <div class="row">
+                                <div class="row" style="padding: 15px;">
                                     
                                     <div class="col-xs-12 col-sm-4">
                                         <h3 style="font-weight: bold;">Service History</h3>
@@ -127,7 +126,7 @@
             <div id="employee-average-sales" style="height:30px"></div>
         </div>
     </div>-->
-                                </div>
+                               
                             </div>
                             <div id="employeeStats" class="col-xs-12">
                                 <div id="team-sales" style="height:200px"></div>
@@ -143,7 +142,7 @@
             <!--close main column-->
         </div>
         <!--close row-->
-
+    </div>
     <!--close container-->
 
     <script>
@@ -526,8 +525,10 @@
     </script>
     <script type="text/x-kendo-tmpl" id="employeeItemTemplate">
         <div class="employee">
+            <div class="col-xs-12 col-sm-4">
+                <img src="Content/Images/Electric_Truck_Volvo_#:id#.PNG" class="img-responsive employee-details-image" />
+            </div>
             <div class="employee-wrapper">
-                <img src="./Content/Employees/#:id#-t.png" class="img-responsive employee-list-image" />
                 <dl class="employee-list-details">
                     <dt class="name"> #:registrationNo# </dt>
                     <dd class="name">#:model# </dd>
@@ -537,9 +538,11 @@
         </div>
     </script>
     <script type="text/x-kendo-tmpl" id="employeeBioTemplate">
-        <div>
-            <h3 style="font-weight: bold;">Details</h3>
-            <!--<img src="./Content/Employees/#:id#.png" class="img-responsive employee-details-image" />-->
+        <div class="col-xs-12 col-sm-8">
+            <img src="Content/Images/Electric_Truck_Volvo_#:id#.PNG" class="img-responsive employee-details-image" style="width: 310px;"/>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <h3 style="font-weight: bold;">Details</h3>           
             <dl class="employee-bio-details">
                 <dt class="name">REGN NO: #:registrationNo# </dt>
                 <dd class="name">#:model# #:modelYear#  </dd>
